@@ -26,4 +26,8 @@ PerpustakaanTgs/
     ├── Buku.cs
     ├── Peminjaman.cs
     └── Pengembalian.cs
+```
 
+# Screenshot
+## Form Utama
+<img width="891" height="532" alt="image" src="https://github.com/user-attachments/assets/5c19b660-c943-4b30-ba3e-04b687adbbe3" />
