@@ -31,3 +31,11 @@ PerpustakaanTgs/
 # Screenshot
 ## Form Utama
 <img width="891" height="532" alt="image" src="https://github.com/user-attachments/assets/5c19b660-c943-4b30-ba3e-04b687adbbe3" />
+## Form Mananagemen Buku 
+<img width="977" height="528" alt="image" src="https://github.com/user-attachments/assets/81520d11-7964-4c5b-ae2b-ff40de8c262b" />
+## Form Managemen Anggota
+<img width="975" height="530" alt="image" src="https://github.com/user-attachments/assets/05eb4bf1-9c73-4ef8-9937-574473b85eb6" />
+## Form Pinjam Buku 
+<img width="975" height="531" alt="image" src="https://github.com/user-attachments/assets/8d70cf8c-2ff3-4612-b7c7-2b76d4f88304" />
+## Form Pengembalian
+<img width="978" height="532" alt="image" src="https://github.com/user-attachments/assets/c129a529-e656-4666-a9a6-b167178ce91d" />
