@@ -157,7 +157,7 @@ CREATE TABLE pengembalian (
   - Model (data)
   - Forms (logic & UI)
 
-## 🧪 Pengujian Sistem (Manual Testing)
+# Pengujian Sistem (Manual Testing)
 
 Pengujian dilakukan secara manual untuk memastikan seluruh fitur utama
 pada Aplikasi Manajemen Perpustakaan berjalan sesuai dengan kebutuhan
@@ -210,7 +210,7 @@ dan aturan bisnis yang telah ditentukan.
 
 ---
 
-### 📝 Catatan Pengujian
+### Catatan Pengujian
 
 - Status ❌ menunjukkan validasi sistem, bukan kesalahan aplikasi
 - Sistem menerapkan aturan bisnis untuk menjaga integritas data
@@ -218,7 +218,7 @@ dan aturan bisnis yang telah ditentukan.
 
 ---
 
-### ✅ Kesimpulan
+###  Kesimpulan
 
 Berdasarkan hasil pengujian manual, aplikasi berjalan stabil dan
 seluruh fitur utama berfungsi dengan baik.  
