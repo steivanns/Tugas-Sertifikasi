@@ -50,9 +50,10 @@ Aplikasi ini menggunakan database relasional MySQL dengan nama perpustakaan. Des
 ### collections table
 
 | Column | Type |
-|--------|------|
-| id | INT (PK, AUTO_INCREMENT) |
-| title | VARCHAR(200) |
-| author | VARCHAR(100) |
-| total_copies | INT |
-| available_copies | INT |
+|------|------|
+| id_buku | INT (PK, AUTO_INCREMENT) |
+| judul | VARCHAR(100) |
+| penulis | VARCHAR(100) |
+| tahun | INT |
+| stok | INT |
+| aktif | TINYINT(1) |
