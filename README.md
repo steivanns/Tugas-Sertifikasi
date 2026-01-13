@@ -47,7 +47,7 @@ PerpustakaanTgs/
 # Database Design 
 Aplikasi ini menggunakan database relasional MySQL dengan nama perpustakaan. Desain database dibuat untuk mendukung proses manajemen buku, anggota, peminjaman, dan pengembalian, serta menerapkan soft delete untuk menjaga integritas data dan riwayat transaksi.
 
-### collections table
+### Table Buku
 
 | Column | Type |
 |------|------|
@@ -57,3 +57,29 @@ Aplikasi ini menggunakan database relasional MySQL dengan nama perpustakaan. Des
 | tahun | INT |
 | stok | INT |
 | aktif | TINYINT(1) |
+
+### Table Anggota 
+
+| Column | Type |
+|------|------|
+| id_anggota | INT (PK, AUTO_INCREMENT) |
+| nama | VARCHAR(100) |
+| alamat | VARCHAR(150) |
+| no_hp | VARCHAR(20) |
+| aktif | TINYINT(1) |
+
+### Table Peminjaman
+| Column | Type |
+|------|------|
+| id_pinjam | INT (PK, AUTO_INCREMENT) |
+| id_buku | INT (FK → buku.id_buku) |
+| id_anggota | INT (FK → anggota.id_anggota) |
+| tanggal_pinjam | DATE |
+| tanggal_jatuh_tempo | DATE |
+
+### Table Pengembalian
+| Column | Type |
+|------|------|
+| id_kembali | INT (PK, AUTO_INCREMENT) |
+| id_pinjam | INT (FK → peminjaman.id_pinjam) |
+| tanggal_kembali | DATE |
