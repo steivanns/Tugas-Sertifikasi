@@ -16,7 +16,7 @@ namespace PerpustakaanTgs
             // Application.Run(new FormBuku1());
             // Application.Run(new FormAnggota());
             // Application.Run(new FormPeminjaman());
-            Application.Run(new FormMain());
+            Application.Run(new FormPemilihan());
         }
     }
 }

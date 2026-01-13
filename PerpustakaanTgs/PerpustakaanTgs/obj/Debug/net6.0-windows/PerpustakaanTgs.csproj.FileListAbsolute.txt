@@ -39,3 +39,5 @@ C:\Users\Steivan\source\repos\PerpustakaanTgs\PerpustakaanTgs\obj\Debug\net6.0-w
 C:\Users\Steivan\source\repos\PerpustakaanTgs\PerpustakaanTgs\obj\Debug\net6.0-windows\PerpustakaanTgs.Forms.FormPengembalian.resources
 C:\Users\Steivan\source\repos\PerpustakaanTgs\PerpustakaanTgs\obj\Debug\net6.0-windows\PerpustakaanTgs.Forms.FormMain.resources
 C:\Users\Steivan\source\repos\PerpustakaanTgs\PerpustakaanTgs\obj\Debug\net6.0-windows\PerpustakaanTgs.Properties.Resources.resources
+C:\Users\Steivan\source\repos\PerpustakaanTgs\PerpustakaanTgs\obj\Debug\net6.0-windows\PerpustakaanTgs.Forms.FormPemilihan.resources
+C:\Users\Steivan\source\repos\PerpustakaanTgs\PerpustakaanTgs\obj\Debug\net6.0-windows\PerpustakaanTgs.Forms.FormUntukAnggota.resources

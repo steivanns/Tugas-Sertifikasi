@@ -40,7 +40,7 @@ namespace PerpustakaanTgs.Forms
                 txtJudul.Focus();
                 return false;
             }
-
+            
             if (string.IsNullOrWhiteSpace(txtPenulis.Text))
             {
                 pesan = "Penulis wajib diisi.";

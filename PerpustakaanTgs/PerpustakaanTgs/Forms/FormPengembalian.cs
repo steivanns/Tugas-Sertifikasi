@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using PerpustakaanTgs.Config;
 using System;
 using System.Collections.Generic;
@@ -26,34 +27,31 @@ namespace PerpustakaanTgs.Forms
             dgvPengembalian.AllowUserToAddRows = false;
             dtpKembali.Value = DateTime.Now;
         }
-
         private void LoadPeminjaman()
         {
             using (MySqlConnection conn = Database.GetConnection())
             {
+                
                 conn.Open();
                 string query =
-                    "SELECT p.id_pinjam, CONCAT(a.nama, ' - ', b.judul) AS info " +
-                    "FROM peminjaman p " +
-                    "JOIN anggota a ON p.id_anggota = a.id_anggota " +
-                    "JOIN buku b ON p.id_buku = b.id_buku " +
-                    "LEFT JOIN pengembalian k ON p.id_pinjam = k.id_pinjam " +
-                    "WHERE k.id_pinjam IS NULL";
+                "SELECT p.id_pinjam, " +
+                "CONCAT(a.nama, ' - ', b.judul, " +
+                "IF(CURDATE() > p.tanggal_jatuh_tempo, ' (TELAT)', ' (AMAN)') ) as info " +
+                "FROM peminjaman p " +
+                "JOIN anggota a ON p.id_anggota = a.id_anggota " +
+                "JOIN buku b ON p.id_buku = b.id_buku " +
+                "LEFT JOIN pengembalian k ON p.id_pinjam = k.id_pinjam " +
+                "WHERE k.id_pinjam IS NULL";
+
 
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
-
+ 
+                da.Fill(dt);  
                 cmbPinjam.DataSource = dt;
                 cmbPinjam.DisplayMember = "info";
                 cmbPinjam.ValueMember = "id_pinjam";
             }
-        }
-
-        private int HitungDenda(DateTime jatuhTempo, DateTime kembali)
-        {
-            int telat = (kembali - jatuhTempo).Days;
-            return telat > 0 ? telat * 1000 : 0;
         }
 
         private void btnKembalikan_Click(object sender, EventArgs e)
@@ -90,7 +88,7 @@ namespace PerpustakaanTgs.Forms
             }
 
             MessageBox.Show("Pengembalian berhasil");
-
+            
             LoadPeminjaman();
             LoadDataGrid();
         }
