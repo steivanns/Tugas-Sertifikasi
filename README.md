@@ -83,3 +83,49 @@ Aplikasi ini menggunakan database relasional MySQL dengan nama perpustakaan. Des
 | id_kembali | INT (PK, AUTO_INCREMENT) |
 | id_pinjam | INT (FK → peminjaman.id_pinjam) |
 | tanggal_kembali | DATE |
+
+# SQL Schema 
+```Text
+CREATE DATABASE perpustakaan;
+USE perpustakaan;
+
+CREATE TABLE buku (
+    id_buku INT AUTO_INCREMENT PRIMARY KEY,
+    judul VARCHAR(100) NOT NULL,
+    penulis VARCHAR(100) NOT NULL,
+    tahun INT NOT NULL,
+    stok INT NOT NULL,
+    aktif TINYINT(1) NOT NULL DEFAULT 1
+);
+
+CREATE TABLE anggota (
+    id_anggota INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    alamat VARCHAR(150) NOT NULL,
+    no_hp VARCHAR(20) NOT NULL,
+    aktif TINYINT(1) NOT NULL DEFAULT 1
+);
+
+CREATE TABLE peminjaman (
+    id_pinjam INT AUTO_INCREMENT PRIMARY KEY,
+    id_buku INT NOT NULL,
+    id_anggota INT NOT NULL,
+    tanggal_pinjam DATE NOT NULL,
+    tanggal_jatuh_tempo DATE NOT NULL,
+    FOREIGN KEY (id_buku) REFERENCES buku(id_buku)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE,
+    FOREIGN KEY (id_anggota) REFERENCES anggota(id_anggota)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE pengembalian (
+    id_kembali INT AUTO_INCREMENT PRIMARY KEY,
+    id_pinjam INT NOT NULL,
+    tanggal_kembali DATE NOT NULL,
+    FOREIGN KEY (id_pinjam) REFERENCES peminjaman(id_pinjam)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+```
