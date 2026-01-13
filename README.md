@@ -1,6 +1,14 @@
 # Aplikasi Perpustakaan Desktop
   Aplikasi Perpustakaan ini merupakan aplikasi desktop berbasis C# WinForms yang digunakan untuk mengelola data buku, anggota, peminjaman, dan pengembalian buku. Aplikasi ini terhubung dengan database MySQL dan menerapkan konsep CRUD, OOP sederhana, serta soft delete.
-  
+
+# Tools 
+
+- Programming Language: C#
+- Framework: .NET (WinForms)
+- Database: MySQL
+- IDE: Visual Studio
+- Library: MySql.Data
+
 # Fitur Utama 
 - Manajemen Data Buku
 - Manajemen Data Anggota
@@ -129,3 +137,91 @@ CREATE TABLE pengembalian (
         ON UPDATE CASCADE
 );
 ```
+
+# ER Diagram 
+<img width="1025" height="477" alt="image" src="https://github.com/user-attachments/assets/3ca05970-e50f-40c9-a144-0642b87563f1" />
+
+# Business Rules
+
+- Buku tidak dapat dinonaktifkan jika masih dipinjam
+- Anggota tidak dapat dinonaktifkan jika memiliki peminjaman aktif
+- Stok buku otomatis berkurang saat peminjaman
+- Stok buku otomatis bertambah saat pengembalian
+- Data tidak dihapus permanen (soft delete)
+
+# POenggunaan OOP 
+- Class digunakan untuk merepresentasikan data (Buku, Anggota, Peminjaman, Pengembalian)
+- Setiap Form bertanggung jawab pada satu fitur
+- Pemisahan antara:
+  - Config (koneksi database)
+  - Model (data)
+  - Forms (logic & UI)
+
+## 🧪 Pengujian Sistem (Manual Testing)
+
+Pengujian dilakukan secara manual untuk memastikan seluruh fitur utama
+pada Aplikasi Manajemen Perpustakaan berjalan sesuai dengan kebutuhan
+dan aturan bisnis yang telah ditentukan.
+
+---
+
+### 🔹 Pengujian Antarmuka Aplikasi
+
+| No | Fitur | Langkah Pengujian | Hasil yang Diharapkan | Hasil Aktual | Status |
+|----|------|------------------|----------------------|-------------|--------|
+| 1 | Form Utama | Menjalankan aplikasi | Form utama tampil tanpa error | Sesuai | ✅ |
+| 2 | Navigasi Menu | Klik menu Buku, Anggota, Peminjaman, Pengembalian | Form terbuka sesuai menu | Sesuai | ✅ |
+
+---
+
+### 🔹 Pengujian Manajemen Buku
+
+| No | Fitur | Langkah Pengujian | Hasil yang Diharapkan | Hasil Aktual | Status |
+|----|------|------------------|----------------------|-------------|--------|
+| 3 | Lihat Buku | Membuka Form Buku | Data buku aktif tampil | Sesuai | ✅ |
+| 4 | Tambah Buku | Input data buku valid lalu simpan | Buku tersimpan ke database | Sesuai | ✅ |
+| 5 | Nonaktifkan Buku | Menghapus buku yang masih dipinjam | Sistem menolak proses | Ditolak oleh sistem | ❌ |
+
+---
+
+### 🔹 Pengujian Manajemen Anggota
+
+| No | Fitur | Langkah Pengujian | Hasil yang Diharapkan | Hasil Aktual | Status |
+|----|------|------------------|----------------------|-------------|--------|
+| 6 | Tambah Anggota | Input data anggota valid | Data anggota tersimpan | Sesuai | ✅ |
+| 7 | Nonaktifkan Anggota | Menghapus anggota yang masih meminjam | Sistem menolak proses | Ditolak oleh sistem | ❌ |
+
+---
+
+### 🔹 Pengujian Peminjaman Buku
+
+| No | Fitur | Langkah Pengujian | Hasil yang Diharapkan | Hasil Aktual | Status |
+|----|------|------------------|----------------------|-------------|--------|
+| 8 | Peminjaman Buku | Memilih anggota & buku | Stok buku berkurang 1 | Sesuai | ✅ |
+| 9 | Tanggal Jatuh Tempo | Melakukan peminjaman | Jatuh tempo +7 hari | Sesuai | ✅ |
+
+---
+
+### 🔹 Pengujian Pengembalian Buku
+
+| No | Fitur | Langkah Pengujian | Hasil yang Diharapkan | Hasil Aktual | Status |
+|----|------|------------------|----------------------|-------------|--------|
+| 10 | Pengembalian Buku | Mengembalikan buku | Stok buku bertambah | Sesuai | ✅ |
+
+---
+
+### 📝 Catatan Pengujian
+
+- Status ❌ menunjukkan validasi sistem, bukan kesalahan aplikasi
+- Sistem menerapkan aturan bisnis untuk menjaga integritas data
+- Seluruh fungsi utama berjalan sesuai perancangan
+
+---
+
+### ✅ Kesimpulan
+
+Berdasarkan hasil pengujian manual, aplikasi berjalan stabil dan
+seluruh fitur utama berfungsi dengan baik.  
+Aplikasi dinyatakan **layak untuk digunakan**.
+
+---
