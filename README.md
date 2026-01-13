@@ -37,7 +37,13 @@ PerpustakaanTgs/
 ```
 
 # Screenshot
-## Form Utama
+## Form Pemilihan User 
+<img width="795" height="482" alt="image" src="https://github.com/user-attachments/assets/6532269d-c995-4021-a4c2-4b55e0d06325" />
+
+## Form Utama Untuk Anggota 
+<img width="797" height="481" alt="image" src="https://github.com/user-attachments/assets/ec7cfb77-acd9-41ce-b725-4a2baf007f1a" />
+
+## Form Utama untuk Admin
 <img width="891" height="532" alt="image" src="https://github.com/user-attachments/assets/5c19b660-c943-4b30-ba3e-04b687adbbe3" />
 
 ## Form Mananagemen Buku 
@@ -180,7 +186,7 @@ dan aturan bisnis yang telah ditentukan.
 |----|------|------------------|----------------------|-------------|--------|
 | 3 | Lihat Buku | Membuka Form Buku | Data buku aktif tampil | Sesuai | ✅ |
 | 4 | Tambah Buku | Input data buku valid lalu simpan | Buku tersimpan ke database | Sesuai | ✅ |
-| 5 | Nonaktifkan Buku | Menghapus buku yang masih dipinjam | Sistem menolak proses | Ditolak oleh sistem | ❌ |
+| 5 | Nonaktifkan Buku | Menghapus buku yang masih dipinjam | Sistem menolak proses | Ditolak oleh sistem | ✅ |
 
 ---
 
@@ -189,7 +195,7 @@ dan aturan bisnis yang telah ditentukan.
 | No | Fitur | Langkah Pengujian | Hasil yang Diharapkan | Hasil Aktual | Status |
 |----|------|------------------|----------------------|-------------|--------|
 | 6 | Tambah Anggota | Input data anggota valid | Data anggota tersimpan | Sesuai | ✅ |
-| 7 | Nonaktifkan Anggota | Menghapus anggota yang masih meminjam | Sistem menolak proses | Ditolak oleh sistem | ❌ |
+| 7 | Nonaktifkan Anggota | Menghapus anggota yang masih meminjam | Sistem menolak proses | Ditolak oleh sistem | ✅ |
 
 ---
 
@@ -212,7 +218,6 @@ dan aturan bisnis yang telah ditentukan.
 
 ### Catatan Pengujian
 
-- Status ❌ menunjukkan validasi sistem, bukan kesalahan aplikasi
 - Sistem menerapkan aturan bisnis untuk menjaga integritas data
 - Seluruh fungsi utama berjalan sesuai perancangan
 
