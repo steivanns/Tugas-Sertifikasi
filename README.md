@@ -12,19 +12,13 @@
 
 # Struktur Folder Project
 PerpustakaanTgs/
-│
-├── Config/
-│   └── Database.cs
-│
-├── Forms/
-│   ├── FormMain.cs
-│   ├── FormBuku1.cs
-│   ├── FormAnggota.cs
-│   ├── FormPeminjaman.cs
-│   └── FormPengembalian.cs
-│
-├── Model/
-│   ├── Anggota.cs
-│   ├── Buku.cs
-│   ├── Peminjaman.cs
-│   └── Pengembalian.cs
+Config/ : Database.cs
+Forms/  : FormMain.cs
+          FormBuku1.cs
+          FormAnggota.cs
+          FormPeminjaman.cs
+          FormPengembalian.cs
+Model/  : Anggota.cs
+          Buku.cs
+          Peminjaman.cs
+          Pengembalian.cs
